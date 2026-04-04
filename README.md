@@ -4,6 +4,23 @@ A production-ready CI/CD implementation of a three-tier web application.
 Demonstrates full-stack automation from infrastructure provisioning to container orchestration and continuous delivery.
 
 ---
+![AWS](https://img.shields.io/badge/Cloud-AWS-orange?logo=amazonaws&logoColor=white)
+![Docker](https://img.shields.io/badge/Container-Docker-blue?logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Orchestration-Kubernetes-blue?logo=kubernetes&logoColor=white)
+![Jenkins](https://img.shields.io/badge/CI-Jenkins-red?logo=jenkins&logoColor=white)
+![ArgoCD](https://img.shields.io/badge/CD-ArgoCD-purple?logo=argo&logoColor=white)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-623CE4?logo=terraform&logoColor=white)
+
+![SonarQube](https://img.shields.io/badge/SAST-SonarQube-blue?logo=sonarqube&logoColor=white)
+![OWASP](https://img.shields.io/badge/SCA-OWASP-purple?logo=owasp&logoColor=white)
+![Trivy](https://img.shields.io/badge/Security-Trivy-green?logo=aquasecurity&logoColor=white)
+
+![Prometheus](https://img.shields.io/badge/Monitoring-Prometheus-orange?logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Dashboard-Grafana-orange?logo=grafana&logoColor=white)
+
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
 
 ### 🔄 Detailed Project Workflow:
 
