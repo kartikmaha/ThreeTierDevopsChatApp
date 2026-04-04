@@ -7,19 +7,19 @@ A production-ready CI/CD implementation of a three-tier web application. This pr
 
 The application follows a standard Three-Tier architecture:
 
-    Frontend: React.js (Client interface)
-
-    Backend: Node.js / Express (API & Logic)
-
-    Database: MongoDB (Data Persistence)
-
+    Frontend (React): Delivers responsive UI and interacts with backend via REST APIs and WebSockets for real-time updates.
+    
+    Backend (Node.js): Handles business logic, authentication, and enables real-time messaging with bi-directional communication.
+    
+    Database (MongoDB): Persists user data and chat messages with efficient CRUD operations.
+    
 🛠️ Technical Stack
 
-    Cloud: AWS (EC2, VPC, IAM)
+    Cloud: AWS
 
     Containerization: Docker & Docker Hub
 
-    Orchestration: Kubernetes (EKS / Self-managed)
+    Orchestration: Kubernetes
 
     CI/CD Pipeline: Jenkins & ArgoCD (GitOps)
 
@@ -33,8 +33,8 @@ The application follows a standard Three-Tier architecture:
 
 🚀 Key Features
 
-    End-to-End Automation: Fully automated CI/CD pipeline that triggers on code commit.
-
+    End-to-End Automation: Jenkins controlled CI/CD pipeline 
+    
     Infrastructure as Code: Modular Terraform scripts for reproducible environment setup.
 
     GitOps Workflow: Uses ArgoCD for declarative, automated synchronization of Kubernetes manifests.
@@ -45,12 +45,33 @@ The application follows a standard Three-Tier architecture:
 
 📈 Pipeline Workflow
 
-    Code Analysis: SonarQube for code quality and bug detection.
+    🔹 1. Code Commit & Trigger
+        Developer pushes code to GitHub
+        Jenkins CI pipeline is automatically triggered
 
-    Vulnerability Scan: OWASP scans for third-party library vulnerabilities.
+    🔹 2. CI Stage – Quality & Security Checks
+        Trivy → Performs filesystem vulnerability scan
+        OWASP Dependency Check → Identifies vulnerable libraries
+        SonarQube → Runs code quality & static analysis
 
-    Build & Package: Docker image creation and push to registry.
+    🔹 3. Build & Package
+        Jenkins builds a Docker image
+        Image is pushed to Docker Registry
 
-    Continuous Deployment: ArgoCD detects changes in the Git repository and updates the Kubernetes cluster state.
+    🔹 4. CD Trigger
+        After successful CI, Jenkins triggers CD pipeline
+        Updates the Docker image version in GitHub manifests
+
+    🔹 5. GitOps Deployment (ArgoCD)
+        ArgoCD detects changes in GitHub repo
+        Automatically syncs and deploys to Kubernetes cluster
+        
+    🔹 6. Application Deployment
+        Kubernetes pulls latest image and deploys application
+        Enables scalable and self-healing workloads
+
+    🔹 7. Monitoring & Alerts
+        Prometheus + Grafana monitor application & cluster health
+        Alerts/notifications sent via Gmail
 
     
