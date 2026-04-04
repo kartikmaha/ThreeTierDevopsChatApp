@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: chatapp-frontend
-        image: kartikmaha/chatapp-frontend:v16
+        image: kartikmaha/chatapp-frontend:v1
         ports:
         - containerPort: 80
         env:
