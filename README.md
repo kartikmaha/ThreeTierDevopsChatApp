@@ -11,6 +11,31 @@ Demonstrates full-stack automation from infrastructure provisioning to container
 
 ---
 
+## 📚 Project Snapshots:
+
+![Settings](frontend/public/settings.png)
+
+![Login](/frontend/public/login.png)
+
+![chat](frontend/public/chat.png)
+
+![logout](/frontend/public/logout.png)
+
+![jenkins](Assets/jenkins-ci.png)
+
+![jenkins](Assets/jenkins-cd.png)
+
+![argo](Assets/argocd.png)
+
+![argo-cd-app](Assets/argo-cd-applicaton.png)
+
+![email](Assets/deployment-email.png)
+
+![monitor](Assets/monitoring.png)
+
+
+---
+
 ## 🏗️ Architecture Overview
 
 The application follows a standard **Three-Tier Architecture**:
@@ -79,30 +104,6 @@ The application follows a standard **Three-Tier Architecture**:
 ### 🔹 7. Monitoring & Alerts
 - **Prometheus + Grafana** monitor system health  
 - Alerts sent via **Gmail notifications**  
-
----
-
-## 📚 Project Snapshots:
-
-![Settings](frontend/public/settings.png)
-
-![Login](/frontend/public/login.png)
-
-![chat](frontend/public/chat.png)
-
-![logout](/frontend/public/logout.png)
-
-![jenkins](Assets/jenkins-ci.png)
-
-![jenkins](Assets/jenkins-cd.png)
-
-![argo](Assets/argocd.png)
-
-![argo-cd-app](Assets/argo-cd-applicaton.png)
-
-![email](Assets/deployment-email.png)
-
-![monitor](Assets/monitoring.png)
 
 ---
 
