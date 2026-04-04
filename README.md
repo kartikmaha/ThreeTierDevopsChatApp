@@ -5,34 +5,67 @@ Demonstrates full-stack automation from infrastructure provisioning to container
 
 ---
 
-## Detailed Project Workflow :
+### 🔄 Detailed Project Workflow:
 
 ![Project Workflow](Assets/ThreeTierChatApp.png)
 
 ---
 
-## 📚 Project Snapshots:
+## 📚 Project Snapshots
 
-![Settings](frontend/public/settings.png)
+### 🎨 Application UI
 
-![Login](/frontend/public/login.png)
+- 🔐 **Login Page**
 
-![chat](frontend/public/chat.png)
+  ![Login](frontend/public/login.png)
 
-![logout](/frontend/public/logout.png)
+- 💬 **Chat Interface**  
 
-![jenkins](Assets/jenkins-ci.png)
+  ![Chat](frontend/public/chat.png)
 
-![jenkins](Assets/jenkins-cd.png)
+- ⚙️ **Settings Page**  
 
-![argo](Assets/argocd.png)
+  ![Settings](frontend/public/settings.png)
 
-![argo-cd-app](Assets/argo-cd-applicaton.png)
+- 🚪 **Logout Flow**  
 
-![email](Assets/deployment-email.png)
+  ![Logout](frontend/public/logout.png)
 
-![monitor](Assets/monitoring.png)
+---
 
+### 🔄 CI/CD Pipeline
+
+- 🏗️ **Jenkins CI Pipeline**  
+
+  ![Jenkins CI](Assets/jenkins-ci.png)
+
+- 🚀 **Jenkins CD Pipeline**  
+
+  ![Jenkins CD](Assets/jenkins-cd.png)
+
+---
+
+### ⚙️ GitOps Deployment
+
+- 🔄 **ArgoCD Dashboard**  
+
+  ![ArgoCD](Assets/argocd.png)
+
+- 📦 **ArgoCD Application Sync**  
+
+  ![ArgoCD App](Assets/argo-cd-applicaton.png)
+
+---
+
+### 📊 Monitoring & Alerts
+
+- 📈 **Monitoring Dashboard (Prometheus + Grafana)**  
+
+  ![Monitoring](Assets/monitoring.png)
+
+- 📧 **Deployment Email Notification**  
+
+  ![Email Notification](Assets/deployment-email.png)
 
 ---
 
@@ -89,33 +122,46 @@ The application follows a **Three-Tier Architecture**:
 ## 📈 CI/CD Pipeline Workflow
 
 ### 🔹 1. Code Commit & Trigger
-- Developer pushes code to **GitHub**  
-- **Jenkins CI pipeline** is automatically triggered  
+- 🚀 Developer pushes code to **GitHub**  
+- 🔄 **Jenkins CI pipeline** automatically triggers and initiates the workflow  
+
+---
 
 ### 🔹 2. CI Stage – Quality & Security Checks
-- **Trivy** → Filesystem vulnerability scan  
-- **OWASP Dependency Check** → Detects vulnerable libraries  
-- **SonarQube** → Code quality & static analysis  
+- 🐳 **Trivy** → Performs filesystem vulnerability scanning  
+- 🛡️ **OWASP Dependency Check** → Identifies vulnerable third-party libraries  
+- 🔍 **SonarQube** → Ensures code quality and runs static analysis  
+
+---
 
 ### 🔹 3. Build & Package
-- Jenkins builds a **Docker image**  
-- Image is pushed to **Docker Hub**  
+- 🏗️ Jenkins builds a **Docker image**  
+- 📦 Image is pushed to **Docker Hub registry**  
+
+---
 
 ### 🔹 4. CD Trigger
-- Jenkins triggers **CD pipeline** after successful CI  
-- Updates Docker image version in **GitHub manifests**  
+- ⚡ Jenkins triggers **CD pipeline** after successful CI execution  
+- 📝 Updates Docker image version in **Kubernetes manifests (GitHub)**  
+
+---
 
 ### 🔹 5. GitOps Deployment (ArgoCD)
-- **ArgoCD** detects repo changes  
-- Syncs and deploys to **Kubernetes cluster**  
+- 🔄 **ArgoCD** continuously monitors GitHub for changes  
+- 🚀 Automatically syncs and deploys to **Kubernetes cluster**  
+
+---
 
 ### 🔹 6. Application Deployment
-- Kubernetes pulls latest image and deploys application  
-- Ensures **scalable & self-healing workloads**  
+- ☸️ Kubernetes pulls latest image and deploys application  
+- 📈 Ensures **scalability, high availability, and self-healing**  
+
+---
 
 ### 🔹 7. Monitoring & Alerts
-- **Prometheus + Grafana** monitor system health  
-- Alerts sent via **Gmail notifications**  
+- 📊 **Prometheus** → Collects metrics and system health data  
+- 📉 **Grafana** → Visualizes real-time dashboards  
+- 📧 Sends **alert notifications via Gmail**  
 
 ---
 
