@@ -76,7 +76,7 @@ The application follows a **Three-Tier Architecture**:
 - 🎨 **Frontend (React)**  
   → Responsive UI with seamless communication via **REST APIs & WebSockets** for real-time updates  
 
-- ⚙️ **Backend (Node.js / Express)**  
+- ⚙️ **Backend (Node.js)**  
   → Handles **business logic, authentication**, and enables **real-time messaging** with bi-directional communication  
 
 - 🗄️ **Database (MongoDB)**  
