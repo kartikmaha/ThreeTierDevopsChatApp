@@ -38,29 +38,41 @@ Demonstrates full-stack automation from infrastructure provisioning to container
 
 ## 🏗️ Architecture Overview
 
-The application follows a standard **Three-Tier Architecture**:
+The application follows a **Three-Tier Architecture**:
 
-- **Frontend (React)** → Delivers responsive UI and interacts with backend via REST APIs and WebSockets for real-time updates  
-- **Backend (Node.js)** → Handles business logic, authentication, and enables real-time messaging with bi-directional communication  
-- **Database (MongoDB)** → Persists user data and chat messages with efficient CRUD operations  
+- 🎨 **Frontend (React)**  
+  → Responsive UI with seamless communication via **REST APIs & WebSockets** for real-time updates  
+
+- ⚙️ **Backend (Node.js / Express)**  
+  → Handles **business logic, authentication**, and enables **real-time messaging** with bi-directional communication  
+
+- 🗄️ **Database (MongoDB)**  
+  → Efficiently stores **user data & chat messages** with optimized CRUD operations  
 
 ---
 
 ## 🛠️ Technical Stack
 
-- **Cloud**: AWS  
-- **Containerization**: Docker & Docker Hub  
-- **Orchestration**: Kubernetes  
-- **CI/CD Pipeline**: Jenkins & ArgoCD (GitOps)  
-- **Infrastructure as Code**: Terraform  
+- ☁️ **Cloud** → AWS  
+- 📦 **Containerization** → Docker & Docker Hub  
+- ☸️ **Orchestration** → Kubernetes  
+- 🔄 **CI/CD Pipeline** → Jenkins + ArgoCD (GitOps)  
+- 🏗️ **Infrastructure as Code** → Terraform  
 
-### 🔐 DevSecOps
-- **SonarQube** (SAST - Static Application Security Testing)  
-- **OWASP Dependency-Check** (SCA - Software Composition Analysis)  
-- **Trivy** (Filesystem Vulnerability Scan)  
+---
 
-### 📊 Monitoring
-- **Prometheus & Grafana**
+## 🔐 DevSecOps
+
+- 🔍 **SonarQube** → Static Code Analysis (SAST)  
+- 🛡️ **OWASP Dependency-Check** → Vulnerability detection (SCA)  
+- 🐳 **Trivy** → Filesystem & image security scanning  
+
+---
+
+## 📊 Monitoring
+
+- 📈 **Prometheus** → Metrics collection & alerting  
+- 📉 **Grafana** → Visualization & real-time dashboards  
 
 ---
 
@@ -110,6 +122,5 @@ The application follows a standard **Three-Tier Architecture**:
 ## 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
-
 
 ---
