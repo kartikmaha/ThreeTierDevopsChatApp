@@ -1,4 +1,4 @@
-# 🚀 Three-Tier Cloud-Native Chat Application
+# 🚀 Three-Tier Chat Application
 
 A production-ready CI/CD implementation of a three-tier web application.  
 Demonstrates full-stack automation from infrastructure provisioning to container orchestration and continuous delivery.
@@ -91,6 +91,19 @@ The application follows a standard **Three-Tier Architecture**:
 ![logout](/frontend/public/logout.png)
 
 ![Login](/frontend/public/login.png)
+
+![jenkins](Assests/jenkins-ci.png)
+
+![jenkins](Assests/jenkins-cd.png)
+
+![argo](Assests/argocd.png)
+
+![argo-cd-app](Assests/jargo-cd-applicaton.png)
+
+![email](Assests/deployment-email.png)
+
+![monitor](Assests/monitoring.png)
+
 
 ---
 
