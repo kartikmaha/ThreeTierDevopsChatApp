@@ -84,8 +84,25 @@ The application follows a standard **Three-Tier Architecture**:
 
 ## 📚 Project Snapshots:
 
+![Settings](frontend/public/settings.png)
 
+![chat](frontend/public/chat.png)
 
+![logout](/frontend/public/logout.png)
+
+![Login](/frontend/public/login.png)
+
+![jenkins](Assests/jenkins-ci.png)
+
+![jenkins](Assests/jenkins-cd.png)
+
+![argo](Assests/argocd.png)
+
+![argo-cd-app](Assests/jargo-cd-applicaton.png)
+
+![email](Assests/deployment-email.png)
+
+![monitor](Assests/monitoring.png)
 
 ---
 
