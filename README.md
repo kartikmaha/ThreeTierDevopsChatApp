@@ -92,17 +92,17 @@ The application follows a standard **Three-Tier Architecture**:
 
 ![Login](/frontend/public/login.png)
 
-![jenkins](Assests/jenkins-ci.png)
+![jenkins](Assets/jenkins-ci.png)
 
-![jenkins](Assests/jenkins-cd.png)
+![jenkins](Assets/jenkins-cd.png)
 
-![argo](Assests/argocd.png)
+![argo](Assets/argocd.png)
 
-![argo-cd-app](Assests/jargo-cd-applicaton.png)
+![argo-cd-app](Assets/argo-cd-applicaton.png)
 
-![email](Assests/deployment-email.png)
+![email](Assets/deployment-email.png)
 
-![monitor](Assests/monitoring.png)
+![monitor](Assets/monitoring.png)
 
 ---
 
