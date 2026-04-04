@@ -106,7 +106,7 @@ pipeline {
             script {
                 emailext attachLog: true,
                 from: 'kartikmahashabde@gmail.com',
-                subject: "Chat Application build failed - '${currentBuild.result}'",
+                subject: "Chat Application build failed- '${currentBuild.result}'",
                 body: """
                     <html>
                     <body>
