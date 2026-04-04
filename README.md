@@ -128,7 +128,7 @@ The application follows a **Three-Tier Architecture**:
 
 ## 🚀 Key Features
 
-- 🔁 **End-to-End Automation** → Jenkins-controlled CI/CD pipeline  
+- 🔁 **CI/CD Pipeline** → Jenkins-controlled CI/CD pipeline  
 - 🏗️ **Infrastructure as Code** → Modular Terraform for reproducible environments  
 - 🔄 **GitOps Workflow** → ArgoCD ensures declarative Kubernetes deployments  
 - 🔐 **Security Integration** → SAST & vulnerability scanning in CI pipeline  
