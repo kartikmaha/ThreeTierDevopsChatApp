@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# --- 1. Configuration ---
+# --- Configuration ---
 INSTANCE_ID="i-0a52f3855167df474"
 REPO_DIR="/projects/ThreeTierDevopsChatApp"
 ENV_FILE="${REPO_DIR}/frontend/.env.docker"
