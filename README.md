@@ -1,77 +1,102 @@
+# 🚀 Three-Tier Cloud-Native Chat Application
 
-Three-Tier Cloud-Native Chat Application
+A production-ready CI/CD implementation of a three-tier web application.  
+Demonstrates full-stack automation from infrastructure provisioning to container orchestration and continuous delivery.
 
-A production-ready CI/CD implementation of a three-tier web application. This project demonstrates full-stack automation, from infrastructure provisioning to container orchestration and continuous delivery.
+---
 
-🏗️ Architecture Overview
+## Detailed Project Workflow :
 
-The application follows a standard Three-Tier architecture:
+![Project Workflow](Assets/ThreeTierChatApp.png)
 
-    Frontend (React): Delivers responsive UI and interacts with backend via REST APIs and WebSockets for real-time updates.
-    
-    Backend (Node.js): Handles business logic, authentication, and enables real-time messaging with bi-directional communication.
-    
-    Database (MongoDB): Persists user data and chat messages with efficient CRUD operations.
-    
-🛠️ Technical Stack
+---
 
-    Cloud: AWS
+## 🏗️ Architecture Overview
 
-    Containerization: Docker & Docker Hub
+The application follows a standard **Three-Tier Architecture**:
 
-    Orchestration: Kubernetes
+- **Frontend (React)** → Delivers responsive UI and interacts with backend via REST APIs and WebSockets for real-time updates  
+- **Backend (Node.js)** → Handles business logic, authentication, and enables real-time messaging with bi-directional communication  
+- **Database (MongoDB)** → Persists user data and chat messages with efficient CRUD operations  
 
-    CI/CD Pipeline: Jenkins & ArgoCD (GitOps)
+---
 
-    Infrastructure as Code: Terraform
+## 🛠️ Technical Stack
 
-    DevSecOps: SonarQube (SAST - Static Application Security Testing) , 
-               OWASP Dependency-Check (SCA - Software Composition Analysis),
-               Trivy (Filesystem Scan)
+- **Cloud**: AWS  
+- **Containerization**: Docker & Docker Hub  
+- **Orchestration**: Kubernetes  
+- **CI/CD Pipeline**: Jenkins & ArgoCD (GitOps)  
+- **Infrastructure as Code**: Terraform  
 
-    Monitoring: Prometheus & Grafana
+### 🔐 DevSecOps
+- **SonarQube** (SAST - Static Application Security Testing)  
+- **OWASP Dependency-Check** (SCA - Software Composition Analysis)  
+- **Trivy** (Filesystem Vulnerability Scan)  
 
-🚀 Key Features
+### 📊 Monitoring
+- **Prometheus & Grafana**
 
-    End-to-End Automation: Jenkins controlled CI/CD pipeline 
-    
-    Infrastructure as Code: Modular Terraform scripts for reproducible environment setup.
+---
 
-    GitOps Workflow: Uses ArgoCD for declarative, automated synchronization of Kubernetes manifests.
+## 🚀 Key Features
 
-    Security Integration: Static Application Security Testing (SAST) and vulnerability scanning integrated into the build process.
+- 🔁 **End-to-End Automation** → Jenkins-controlled CI/CD pipeline  
+- 🏗️ **Infrastructure as Code** → Modular Terraform for reproducible environments  
+- 🔄 **GitOps Workflow** → ArgoCD ensures declarative Kubernetes deployments  
+- 🔐 **Security Integration** → SAST & vulnerability scanning in CI pipeline  
+- 📈 **Scalability** → Kubernetes-based horizontal scaling  
 
-    Scalability: Horizontal scaling of application components via Kubernetes deployments.
+---
 
-📈 Pipeline Workflow
+## 📈 CI/CD Pipeline Workflow
 
-    🔹 1. Code Commit & Trigger
-        Developer pushes code to GitHub
-        Jenkins CI pipeline is automatically triggered
+### 🔹 1. Code Commit & Trigger
+- Developer pushes code to **GitHub**  
+- **Jenkins CI pipeline** is automatically triggered  
 
-    🔹 2. CI Stage – Quality & Security Checks
-        Trivy → Performs filesystem vulnerability scan
-        OWASP Dependency Check → Identifies vulnerable libraries
-        SonarQube → Runs code quality & static analysis
+### 🔹 2. CI Stage – Quality & Security Checks
+- **Trivy** → Filesystem vulnerability scan  
+- **OWASP Dependency Check** → Detects vulnerable libraries  
+- **SonarQube** → Code quality & static analysis  
 
-    🔹 3. Build & Package
-        Jenkins builds a Docker image
-        Image is pushed to Docker Registry
+### 🔹 3. Build & Package
+- Jenkins builds a **Docker image**  
+- Image is pushed to **Docker Hub**  
 
-    🔹 4. CD Trigger
-        After successful CI, Jenkins triggers CD pipeline
-        Updates the Docker image version in GitHub manifests
+### 🔹 4. CD Trigger
+- Jenkins triggers **CD pipeline** after successful CI  
+- Updates Docker image version in **GitHub manifests**  
 
-    🔹 5. GitOps Deployment (ArgoCD)
-        ArgoCD detects changes in GitHub repo
-        Automatically syncs and deploys to Kubernetes cluster
-        
-    🔹 6. Application Deployment
-        Kubernetes pulls latest image and deploys application
-        Enables scalable and self-healing workloads
+### 🔹 5. GitOps Deployment (ArgoCD)
+- **ArgoCD** detects repo changes  
+- Syncs and deploys to **Kubernetes cluster**  
 
-    🔹 7. Monitoring & Alerts
-        Prometheus + Grafana monitor application & cluster health
-        Alerts/notifications sent via Gmail
+### 🔹 6. Application Deployment
+- Kubernetes pulls latest image and deploys application  
+- Ensures **scalable & self-healing workloads**  
 
-    
+### 🔹 7. Monitoring & Alerts
+- **Prometheus + Grafana** monitor system health  
+- Alerts sent via **Gmail notifications**  
+
+---
+
+## 📚 Project Snapshots:
+
+![Settings](frontend/public/settings.png)
+
+![chat](frontend/public/chat.png)
+
+![logout](/frontend/public/logout.png)
+
+![Login](/frontend/public/login.png)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+
+---
