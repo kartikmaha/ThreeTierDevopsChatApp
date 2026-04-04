@@ -86,11 +86,11 @@ The application follows a standard **Three-Tier Architecture**:
 
 ![Settings](frontend/public/settings.png)
 
+![Login](/frontend/public/login.png)
+
 ![chat](frontend/public/chat.png)
 
 ![logout](/frontend/public/logout.png)
-
-![Login](/frontend/public/login.png)
 
 ![jenkins](Assets/jenkins-ci.png)
 
