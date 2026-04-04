@@ -1,0 +1,127 @@
+@Library('Shared') _
+pipeline {
+    agent any
+    
+    parameters {
+        string(name: 'FRONTEND_DOCKER_TAG', defaultValue: '', description: 'Frontend Docker tag of the image built by the CI job')
+        string(name: 'BACKEND_DOCKER_TAG', defaultValue: '', description: 'Backend Docker tag of the image built by the CI job')
+    }
+
+    stages {
+        stage("Workspace cleanup"){
+            steps{
+                script{
+                    cleanWs()
+                }
+            }
+        }
+        
+        stage('Git: Code Checkout') {
+            steps {
+                script{
+                    code_checkout("https://github.com/kartikmaha/ThreeTierDevopsChatApp.git","master")
+                }
+            }
+        }
+        
+        stage('Verify: Docker Image Tags') {
+            steps {
+                script{
+                    echo "FRONTEND_DOCKER_TAG: ${params.FRONTEND_DOCKER_TAG}"
+                    echo "BACKEND_DOCKER_TAG: ${params.BACKEND_DOCKER_TAG}"
+                }
+            }
+        }
+        
+        stage("Update: Kubernetes manifests") {
+            steps {
+                script {
+                    dir('k8s') {
+                        sh """
+                            sed -i "s/name: chatapp-backend.*/name: chatapp-backend/g" backend-deployment.yml
+                            sed -i "s/name: chatapp-frontend.*/name: chatapp-frontend/g" frontend-deployment.yml
+                            sed -i "s|image: .*chatapp-backend:.*|image: kartikmaha/chatapp-backend:${params.BACKEND_DOCKER_TAG}|g" backend-deployment.yml
+                            sed -i "s|image: .*chatapp-frontend:.*|image: kartikmaha/chatapp-frontend:${params.FRONTEND_DOCKER_TAG}|g" frontend-deployment.yml
+                        """
+                    }
+                }
+            }
+        } 
+        
+        stage("Git: Code update and push to GitHub") {
+            steps {
+                script {
+                    def botEmail = "jenkins-bot@gmail.com"
+                    def botName = "Jenkins-CI-CD"
+                    
+                    withCredentials([gitUsernamePassword(credentialsId: 'GitHubCred', gitToolName: 'Default')]) {
+                        withEnv(["GIT_AUTHOR_NAME=${botName}", "GIT_AUTHOR_EMAIL=${botEmail}", "GIT_COMMITTER_NAME=${botName}", "GIT_COMMITTER_EMAIL=${botEmail}"]) {
+                            sh '''
+                                echo "Adding changes to git..."
+                                git add .
+                                
+                                if ! git diff --quiet --staged; then
+                                    echo "Committing changes..."
+                                    git commit -m "Updated environment variables - Build #${BUILD_NUMBER}"
+                                    
+                                    echo "Pushing changes to GitHub..."
+                                    git push origin master
+                                else
+                                    echo "No changes detected. Skipping push."
+                                fi
+                            '''
+                        }
+                    }
+                }
+            }
+        } 
+    } 
+
+    post {
+        success {
+            script {
+                emailext attachLog: true,
+                from: 'kartikmahashabde@gmail.com',
+                subject: "Chat Application has been updated and deployed - '${currentBuild.result}'",
+                body: """
+                    <html>
+                    <body>
+                        <div style="background-color: #FFA07A; padding: 10px; margin-bottom: 10px;">
+                            <p style="color: black; font-weight: bold;">Project: ${env.JOB_NAME}</p>
+                        </div>
+                        <div style="background-color: #90EE90; padding: 10px; margin-bottom: 10px;">
+                            <p style="color: black; font-weight: bold;">Build Number: ${env.BUILD_NUMBER}</p>
+                        </div>
+                        <div style="background-color: #87CEEB; padding: 10px; margin-bottom: 10px;">
+                            <p style="color: black; font-weight: bold;">URL: ${env.BUILD_URL}</p>
+                        </div>
+                    </body>
+                    </html>
+                """,
+                to: 'kartikmahashabde@gmail.com',
+                mimeType: 'text/html'
+            }
+        }
+        failure {
+            script {
+                emailext attachLog: true,
+                from: 'kartikmahashabde@gmail.com',
+                subject: "Chat Application build failed - '${currentBuild.result}'",
+                body: """
+                    <html>
+                    <body>
+                        <div style="background-color: #FFA07A; padding: 10px; margin-bottom: 10px;">
+                            <p style="color: black; font-weight: bold;">Project: ${env.JOB_NAME}</p>
+                        </div>
+                        <div style="background-color: #90EE90; padding: 10px; margin-bottom: 10px;">
+                            <p style="color: black; font-weight: bold;">Build Number: ${env.BUILD_NUMBER}</p>
+                        </div>
+                    </body>
+                    </html>
+                """,
+                to: 'kartikmahashabde@gmail.com',
+                mimeType: 'text/html'
+            }
+        }
+    }
+}

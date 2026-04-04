@@ -1,0 +1,67 @@
+# ==========================================
+# 1. SECURITY & ENVIRONMENT (CRITICAL)
+# ==========================================
+# Never commit actual credentials or secrets
+.env
+.env.local
+.env.*.local
+secrets.yml
+secrets.yaml
+*.pem
+*.key
+auth_config.json
+credentials.json
+
+# ==========================================
+# 2. NODE.JS (Backend & Frontend)
+# ==========================================
+# Dependencies
+node_modules/
+jspm_packages/
+# Build outputs
+dist/
+build/
+.cache/
+.parcel-cache/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ==========================================
+# 3. TERRAFORM (Infrastructure)
+# ==========================================
+# Local state and plugins
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+.terraform.lock.hcl
+# Crash logs
+crash.log
+
+# ==========================================
+# 4. KUBERNETES & DOCKER
+# ==========================================
+# Local kubeconfigs or sensitive manifests
+.kube/
+kubeconfig
+docker-compose.override.yml
+# Temporary helm charts
+charts/
+*.tgz
+
+# ==========================================
+# 5. IDE & SYSTEM FILES
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
