@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: chatapp-backend
-        image: kartikmaha/chatapp-backend:v17
+        image: kartikmaha/chatapp-backend:v18
         ports:
         - containerPort: 5001
         env:
